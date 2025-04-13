@@ -1,0 +1,11 @@
+@use "./mixins.scss";
+@use "./variables.scss" as var;
+
+.text {
+    margin-bottom: var.$spacingL;
+    @include mixins.fontAll(var.$fontS, var.$lineHeightS, var.$fontBold, var.$darkText);
+
+    @include mixins.mediaQueryMin(tablet) {
+        @include mixins.fontAll(var.$fontM, var.$lineHeightM, var.$fontBold, var.$darkText);
+    }
+}

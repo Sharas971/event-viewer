@@ -1,0 +1,45 @@
+@mixin mediaQuery($breakpoint) {
+    @if $breakpoint ==desktop {
+        @media screen and (max-width: 62.5em) {
+            // 1000px
+            @content;
+        }
+    }
+
+    @if $breakpoint ==tablet {
+        @media screen and (max-width: 47.9375em) {
+            // 767px
+            @content;
+        }
+    }
+
+    @if $breakpoint ==mobile {
+        @media screen and (max-width: 24.3125em) {
+            // 389px
+            @content;
+        }
+    }
+}
+
+@mixin mediaQueryMin($breakpoint) {
+    @if $breakpoint ==tablet {
+        @media screen and (min-width: 48em) {
+            // 768px
+            @content;
+        }
+    }
+
+    @if $breakpoint ==desktop {
+        @media screen and (min-width: 62.5em) {
+            // 1000px
+            @content;
+        }
+    }
+}
+
+@mixin fontAll($fontSize, $lineHeight, $fontWeight, $color) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: $fontWeight;
+    color: $color;
+}

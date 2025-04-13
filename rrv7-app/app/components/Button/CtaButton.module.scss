@@ -1,0 +1,17 @@
+@use "../../styles//mixins.scss";
+@use "../../styles/variables.scss" as var;
+
+.ctaButton {
+    @include mixins.fontAll(var.$fontS, var.$lineHeightS, var.$fontBold, var.$whiteColor);
+    background-color: var.$primary;
+    border: none;
+    border-radius: var.$borderRadiusMedium;
+    text-transform: uppercase;
+    text-align: center;
+    padding: var.$spacingS var.$spacingXL;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var.$primaryHover;
+    }
+}

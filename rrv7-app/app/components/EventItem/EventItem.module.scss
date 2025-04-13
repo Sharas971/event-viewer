@@ -1,0 +1,35 @@
+@use "../../styles//mixins.scss";
+@use "../../styles/variables.scss" as var;
+
+.event {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: var.$spacingM;
+    background-color: var.$whiteColor;
+    border-radius: var.$borderRadiusSmall;
+    gap: var.$spacingM;
+    margin-bottom: var.$spacingL;
+    @include mixins.fontAll(var.$fontS, var.$lineHeightS, var.$fontRegular, var.$darkText);
+
+    @include mixins.mediaQueryMin(tablet) {
+        @include mixins.fontAll(var.$fontM, var.$lineHeightM, var.$fontRegular, var.$darkText);
+    }
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    @include mixins.mediaQueryMin(tablet) {
+        flex-direction: row;
+    }
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: var.$spacingS;
+
+    @include mixins.mediaQueryMin(tablet) {
+        flex-direction: row;
+        gap: var.$spacingM;
+    }
+}

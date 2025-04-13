@@ -1,0 +1,33 @@
+@use "../../styles//mixins.scss";
+@use "../../styles/variables.scss" as var;
+
+.navbarWrapper {
+    margin-bottom: var.$spacingL;
+}
+
+.title {
+    text-align: center;
+    @include mixins.fontAll(var.$fontL, var.$lineHeightL, var.$fontBold, var.$darkText);
+
+    @include mixins.mediaQueryMin(tablet) {
+        text-align: left;
+        @include mixins.fontAll(var.$fontXL, var.$lineHeightXL, var.$fontBold, var.$darkText);
+    }
+}
+
+nav {
+    text-align: center;
+
+    @include mixins.mediaQueryMin(tablet) {
+        text-align: left;
+    }
+}
+
+.link {
+    color: var.$primary;
+    @include mixins.fontAll(var.$fontS, var.$lineHeightS, var.$fontBold, var.$primary);
+
+    @include mixins.mediaQueryMin(tablet) {
+        @include mixins.fontAll(var.$fontM, var.$lineHeightM, var.$fontBold, var.$primary);
+    }
+}

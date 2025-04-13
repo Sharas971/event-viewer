@@ -1,0 +1,63 @@
+@use "../../styles//mixins.scss";
+@use "../../styles/variables.scss" as var;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var.$spacingL;
+
+    @include mixins.mediaQueryMin(desktop) {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: var.$spacingL;
+        height: 70vh;
+    }
+}
+
+.card {
+    background-color: var.$whiteColor;
+    border-radius: var.$borderRadiusSmall;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    padding: var.$spacingL;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include mixins.mediaQueryMin(desktop) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.responsiveContainer {
+    flex: 1;
+    min-height: 200px;
+}
+
+.areaChart {
+    grid-row: span 3;
+    grid-column: span 3;
+}
+
+.columnChart:nth-child(2) {
+    grid-row: span 1;
+    grid-column: 4 / 6;
+}
+
+.columnChart:nth-child(3) {
+    grid-row: 2 / 4;
+    grid-column: 4 / 6;
+}
+
+.title {
+    color: var.$primary;
+    margin-bottom: var.$spacingS;
+    @include mixins.fontAll(var.$fontS, var.$lineHeightS, var.$fontBold, var.$primary);
+
+    @include mixins.mediaQueryMin(tablet) {
+        text-align: left;
+        @include mixins.fontAll(var.$fontM, var.$lineHeightM, var.$fontBold, var.$primary);
+    }
+}
